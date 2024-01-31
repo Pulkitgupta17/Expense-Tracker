@@ -1,0 +1,38 @@
+mat-form-field {
+    margin: 1%;
+}
+
+.save{
+    margin-right: 0%;
+    margin-left: 3%;
+    width:80px
+}
+
+.reset{
+    margin-left: 1%;
+    width:80px
+}
+
+mat-divider{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#editButton{
+    margin-left: 3%;
+    background-color: rgb(80 98 138);
+    color: #fff;
+}
+
+th{
+    width: 23%;
+}
+
+table{
+    border-style: solid;
+}
+
+.categoriesButton{
+    margin-left: 1%;
+    width: fit-content;
+}

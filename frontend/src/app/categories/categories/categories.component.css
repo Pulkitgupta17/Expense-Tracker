@@ -1,0 +1,32 @@
+mat-card{
+    width:100%;
+    border-style: solid;
+    box-shadow: 2px 2px 15px 1px grey;
+    border-width: 0.1ch;
+}
+
+button{
+    width: 10%;
+}
+
+.col-12{
+    margin-left: 4%;
+} 
+
+.saveButton{
+    width:7%;
+    margin-left: 2%;
+}
+
+#categoryInput{
+    width:30%
+}
+
+mat-divider{
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
+
+.expensesButton{
+    width: fit-content;
+}

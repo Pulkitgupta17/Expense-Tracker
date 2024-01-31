@@ -1,0 +1,82 @@
+<div class="mt-5">
+
+  <div class="col-12">
+    <h4 class="card-title">Save Expense</h4>
+    <span>
+      <form [formGroup]="expenseForm" (ngSubmit)="expenseFormSubmit()" >
+
+        <input type="text" formControlName="id" class="form-control mb-2 mr-sm-2" id="inlineFormInputExpense"
+          placeholder="id" hidden>
+
+        <mat-form-field >
+          <mat-label>Expense</mat-label>
+          <input matInput formControlName="expense" placeholder="Expense" required>
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label>Category</mat-label>
+          <mat-select formControlName="category" placeholder="Choose a Category">
+            <mat-option *ngFor="let category of categories" [value]="category.category">{{ category.category }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label>Date</mat-label>
+          <input matInput formControlName="date" type="date" placeholder="Date" required>
+        </mat-form-field>
+
+        <mat-form-field >
+          <mat-label>Amount</mat-label>
+          <input matInput formControlName="amount" type="number" placeholder="Amount" required>
+        </mat-form-field>
+        <!-- <div class="btn-group mb-2" role="group" aria-label="Basic example"> -->
+          <button  type="submit" mat-raised-button color="primary" class="save">Save</button>
+          <!-- <button type="submit" mat-button class="btn btn-gradient-primary save">Save</button> -->
+          <button  type="reset" mat-raised-button color="warn" class="save">Reset</button>
+          <!-- <button type="reset" mat-button class="btn btn-gradient-primary reset">Reset</button> -->
+        <!-- </div> -->
+
+      </form>
+    </span>
+    <button type="submit" class="categoriesButton" mat-raised-button (click) = "changeRoute()">Click to add a new category</button>
+    <!-- <button type="submit" class="categoriesButton" mat-raised-button routerLink="../../categories">Click to add a new category</button> -->
+    <mat-divider></mat-divider>
+    <h4 class="card-title table-heading">List of Expenses</h4>
+    <div class="card">
+      <div class="card-body">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Expense</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let expense of expenses; let i = index">
+              <td>{{ expense.expense }}</td>
+              <td>{{ expense.category }}</td>
+              <td>{{ expense.date }}</td>
+              <td>{{ expense.amount }}</td>
+              <td>
+                <button mat-raised-button color="warn" (click)="deleteExpense(i, expense.id)" type="button" >Delete</button>
+                <button mat-raised-button  id = "editButton"(click)="getExpense(expense.id)" type="button" >Edit</button>
+                <!-- <div class="btn-group mb-4" role="group" aria-button="Basic example">
+                  <button (click)="deleteExpense(i, expense.id)" type="button" class="btn btn-danger btn-sm">
+                    <i class="mdi mdi-delete-forever"></i>
+                  </button>
+                  <button (click)="getExpense(expense.id)" type="button" class="btn btn-primary btn-sm">
+                    <i class="mdi mdi-table-edit"></i>
+                  </button>
+                </div> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

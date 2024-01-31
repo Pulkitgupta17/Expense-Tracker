@@ -1,0 +1,32 @@
+<div class="mt-5">
+  <div class="row" id="proBanner">
+    <div class="col-12">
+        <div class="heading-container">
+          <h2>Add category</h2>
+        </div>
+          <form [formGroup]="categoryForm" (ngSubmit)="categoryFormSubmit()" class="form-inline mb-0">
+              <mat-form-field id = "categoryInput"class="mr-sm-2">
+                  <input matInput formControlName="category" placeholder="New Category">
+              </mat-form-field>
+              <button type="submit" mat-raised-button color="primary" class="saveButton">Save</button>
+          </form>
+          <!-- <button type="submit" class="expensesButton" mat-raised-button (click) = "doBefore()">Click to view list of expenses</button> -->
+      </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="row">
+      <div *ngFor="let category of categories; let i = index" class="col-md-4 stretch-card grid-margin">
+          <mat-card class="bg-default">
+              <div class="card-body">
+                  <button mat-raised-button (click)="deleteCategory(i, category.id)" color="warn" class="float-right">Delete</button>
+                  <!-- <button (click)="deleteCategory(i, category.id)" mat-icon-button color="warn"
+                      class="float-right">
+                      <mat-icon>delete</mat-icon>
+                  </button> -->
+                  <p class="font-weight-normal mb-3 text-secondary">Category</p>
+                  <p>{{ category.category }}</p>
+              </div>
+          </mat-card>
+      </div>
+  </div>
+</div>

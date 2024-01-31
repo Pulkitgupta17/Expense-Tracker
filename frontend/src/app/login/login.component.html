@@ -1,0 +1,26 @@
+<div class="component-body">
+  <div class="heading-container">
+    <h2>User Login</h2>
+  </div>
+    <div class="form-container">
+      <form class="input-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-field-container">
+          <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" required>
+          </mat-form-field>
+          <br/>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" required>
+          </mat-form-field>
+          <br/>
+          <button  class="submitButton" mat-raised-button color="primary" type="submit">Login</button>
+          <br/>
+        </div>
+        <div class="register-container">
+          <span>Not a member yet?</span><a class="registerButton" routerLink="../signup">Register</a>
+        </div>
+      </form>
+    </div>
+</div>

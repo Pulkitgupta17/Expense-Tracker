@@ -1,0 +1,31 @@
+<div class="component-body">
+    <div class="heading-container">
+      <h2>User Signup</h2>
+    </div>
+      <div class="form-container">
+        <form class="input-form" [formGroup]="signupForm" (ngSubmit)="signup()">
+          <div class="input-field-container">
+            <mat-form-field appearance="fill">
+              <mat-label>Username</mat-label>
+              <input matInput formControlName="username" placeholder="Username" required>
+            </mat-form-field>
+            <br/>
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email" placeholder="Email" required>
+            </mat-form-field>
+            <br/>
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput formControlName="password" type="password" placeholder="Password" required>
+            </mat-form-field>
+            <br/>
+            <button  class="submitButton" mat-raised-button color="primary" type="submit">Sign Up</button>
+            <br/>
+          </div>
+          <div class="register-container">
+            <span>Already a member?</span><a class="registerButton" href="/login">Login</a>
+          </div>
+        </form>
+      </div>
+  </div>
